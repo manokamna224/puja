@@ -223,23 +223,23 @@ Legend says that after the Mahabharata war, the Pandavas sought forgiveness from
 
 export default function TempleSection() {
   return (
-    <section className="bg-[#fff7ee] py-14 px-6 md:px-20">
-      <h2 className="text-4xl font-extrabold text-center text-gray-800 mb-2">
+    <section className="bg-[#fff7ee] py-14 px-4 sm:px-6 md:px-10 lg:px-20">
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-2 leading-snug">
         Top Temples
       </h2>
       <div className="w-16 h-1 mx-auto bg-orange-500 rounded mb-8"></div>
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {temples.map((temple) => (
           <Link
             href={`/temple/${temple.slug}`}
             key={temple.id}
-            className="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-xl"
+            className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-transform hover:-translate-y-1"
           >
             <img
               src={temple.image}
               alt={temple.name}
-              className="w-full h-52 object-cover"
+              className="w-full h-52 sm:h-60 object-cover"
             />
             <div className="p-4">
               <h3 className="font-semibold text-lg text-gray-800">
