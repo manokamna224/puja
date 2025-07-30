@@ -53,7 +53,7 @@ export default function EventSlider() {
              
 
               {/* Content Overlay */}
-              <div className="absolute w-full rounded-md bg-gradient-to-r from-black to-black/60 inset-0 px-8 max-sm:py-8 md:px-16 py-4 flex flex-col md:flex-row justify-between items-center z-10">
+              <div className="absolute w-full rounded-md bg-gradient-to-r from-black to-grey/60 inset-0 px-8 max-sm:py-8 md:px-16 py-4 flex flex-col md:flex-row justify-between items-center z-10">
                 <div className="text-left max-sm:space-y-4 md:space-y-2 max-w-xl">
                   <h2 className="text-2xl md:text-3xl font-bold text-yellow-400">{event.title}</h2>
                   <p className="text-sm pl-1">{event.location}</p>
