@@ -1,4 +1,5 @@
-import PujaSection from '@/components/pujaSection'
+'use client'
+import PujaSection from '@/components/puja-section'
 import React from 'react'
 
 const page = () => {

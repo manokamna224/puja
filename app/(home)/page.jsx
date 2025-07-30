@@ -1,6 +1,6 @@
 import EventSlider from "@/components/EventSlider";
 import FeatureGrid from "@/components/featured-grid";
-import PujaSection from '@/components/PujaSection'
+import PujaSection from '@/components/puja-section'
 
 // app/page.js
 export default function Home() {
