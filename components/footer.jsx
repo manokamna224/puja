@@ -19,11 +19,11 @@ export default function Footer() {
         <div>
           <h4 className="text-md font-semibold text-gray-300 mb-2">Links</h4>
           <ul className="space-y-1 text-sm">
-            <li><a href="#" className="hover:text-white transition">Home</a></li>
-            <li><a href="#" className="hover:text-white transition">Puja</a></li>
-            <li><a href="#" className="hover:text-white transition">Chadhava</a></li>
-            <li><a href="#" className="hover:text-white transition">Prasad</a></li>
-            <li><a href="#" className="hover:text-white transition">Temples</a></li>
+            <li><a href="/" className="hover:text-white transition">Home</a></li>
+            <li><a href="/puja" className="hover:text-white transition">Puja</a></li>
+            <li><a href="/chadhava" className="hover:text-white transition">Chadhava</a></li>
+            <li><a href="/prasad" className="hover:text-white transition">Prasad</a></li>
+            <li><a href="/temple" className="hover:text-white transition">Temples</a></li>
           </ul>
         </div>
 

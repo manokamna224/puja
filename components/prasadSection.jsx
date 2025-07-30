@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import { MdOutlineLocalOffer } from 'react-icons/md'
 
@@ -9,36 +10,42 @@ const prasadItems = [
     title: 'Kashi Vishwanath Prasad',
     location: 'Kashi Vishwanath Temple, Varanasi',
     image: '/images/prasad/prasad1.jpeg',
+    slug: 'kashi-vishwanath-prasad',
   },
   {
     id: 2,
     title: 'Sankat Mochan Ladoo Prasad',
     location: 'Sankat Mochan Temple, Varanasi',
     image: '/images/prasad/prasad2.jpeg',
+    slug: 'sankat-Mochan-Ladoo-Prasad',
   },
   {
     id: 3,
     title: 'Baba Baidyanath Dry Fruit Prasad',
     location: 'Baidyanath Dham, Deoghar',
     image: '/images/prasad/prasad3.jpeg',
+    slug: 'baba-Baidyanath-Dry-Fruit-Prasad',
   },
   {
     id: 4,
     title: 'Hanuman Garhi Boondi Prasad',
     location: 'Hanuman Garhi, Ayodhya',
     image: '/images/prasad/prasad4.jpeg',
+    slug: 'hanuman-garhi-boondi-prasad'
   },
   {
     id: 5,
     title: 'Pashupatinath Laddu Prasad',
     location: 'Pashupatinath Temple, Nepal',
     image: '/images/prasad/prasad5.jpeg',
+    slug: 'pashupatinath-laddu-prasad'
   },
   {
     id: 6,
     title: 'Durga Kund Coconut Prasad',
     location: 'Durga Kund Mandir, Varanasi',
     image: '/images/prasad/prasad6.jpeg',
+    slug: 'durga-kund-mandir-prasad'
   },
 ]
 
@@ -69,10 +76,12 @@ export default function PrasadSection() {
                 <FaMapMarkerAlt className="text-orange-500 mr-2" />
                 {item.location}
               </p>
+               <Link href={`/prasad/${item.slug}`}>
               <button className="mt-4 w-full bg-orange-500 hover:bg-orange-600 text-white flex justify-center items-center gap-2 py-2 rounded-md font-medium transition">
-                <MdOutlineLocalOffer />
-                Buy Prasad
-              </button>
+              <MdOutlineLocalOffer />
+              Buy Prasad
+            </button>
+           </Link>
             </div>
           </div>
         ))}
