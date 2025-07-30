@@ -1,4 +1,4 @@
-import ChadhavaSection from '@/components/ChadhavaSection'
+import ChadhavaSection from '@/components/chadhava-section'
 import React from 'react'
 
 const page = () => {
