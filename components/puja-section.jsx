@@ -197,37 +197,38 @@ export const pujasData = [
 
 
 export default function PujaSection() {
-    const [query, setQuery] = useState('')
-  
-    const handleSearchClick = (term) => {
-      setQuery(term)
-    }
-  
+  const [query, setQuery] = useState('')
+
+  const handleSearchClick = (term) => {
+    setQuery(term)
+  }
 
   return (
-    <section className="bg-[#fef6ec] py-12 px-4 md:px-20">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-4">
+    <section className="bg-[#fef6ec] py-12 px-4 sm:px-6 md:px-10 lg:px-20">
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-4 leading-snug">
         Explore <span className="text-orange-500">Upcoming</span> Pujas
       </h2>
 
+      {/* Search Input */}
       <div className="flex justify-center mb-6">
         <input
           type="text"
           placeholder="Search for Bankey Bihari Puja"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full max-w-xl px-6 py-3 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 shadow-sm"
+          className="w-full max-w-2xl px-6 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm sm:text-base shadow-md"
         />
       </div>
 
+      {/* Popular Searches */}
       <div className="text-center mb-8">
-        <p className="font-medium text-gray-600">Popular Searches:</p>
-        <div className="flex justify-center gap-4 mt-2 flex-wrap">
+        <p className="font-medium text-gray-600 text-sm sm:text-base">Popular Searches:</p>
+        <div className="flex justify-center gap-3 flex-wrap mt-3">
           {['Bankey Bihari', 'Kashi', 'Mangalnath'].map((term, idx) => (
             <button
               key={idx}
-                onClick={() => handleSearchClick(term)}
-              className="px-4 py-1 rounded-full bg-white border border-gray-300 text-sm hover:bg-orange-100 transition"
+              onClick={() => handleSearchClick(term)}
+              className="px-4 py-1.5 rounded-full bg-white border border-gray-300 text-sm hover:bg-orange-100 transition text-gray-700"
             >
               {term}
             </button>
@@ -235,18 +236,27 @@ export default function PujaSection() {
         </div>
       </div>
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      {/* Puja Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {pujasData
           .filter((puja) =>
             puja.title.toLowerCase().includes(query.toLowerCase())
           )
           .map((puja) => (
-            <Link href={`/puja/${puja.slug}`} key={puja.id} className="bg-white rounded-xl overflow-hidden shadow-lg">
-              <img src={puja.image} alt={puja.title} className="w-full h-52 object-cover" />
+            <Link
+              href={`/puja/${puja.slug}`}
+              key={puja.id}
+              className="bg-white rounded-xl overflow-hidden shadow hover:shadow-xl transition"
+            >
+              <img
+                src={puja.image}
+                alt={puja.title}
+                className="w-full h-52 sm:h-60 object-cover"
+              />
               <div className="p-4 space-y-1">
                 <p className="text-sm text-purple-700 font-medium">{puja.temple}</p>
                 <p className="text-xs text-gray-600">{puja.subtitle}</p>
-                <h3 className="font-bold text-md mt-1 text-gray-800">{puja.title}</h3>
+                <h3 className="font-bold text-md text-gray-800">{puja.title}</h3>
               </div>
             </Link>
           ))}
