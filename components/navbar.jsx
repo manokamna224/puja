@@ -6,7 +6,7 @@ import { FaGlobeAmericas } from "react-icons/fa";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center bg-[#b71717] text-white max-sm:px-4 lg:px-20 py-4 shadow-md">
+    <nav className="flex justify-between items-center bg-[#ed1010] text-white max-sm:px-4 lg:px-20 py-4 shadow-md">
       {/* Left Logo */}
       <div className="flex items-center gap-2">
         <FaGlobeAmericas size={24} className="text-white" />

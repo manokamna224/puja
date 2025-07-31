@@ -76,12 +76,12 @@ const PujaReviewSection = () => {
         </h2>
 
         <div className="relative w-full">
-          <div className="flex gap-6 animate-scroll-loop whitespace-nowrap">
+          <div className="flex gap-6 flex-wrap animate-scroll-loop md:whitespace-nowrap">
             {reviews.filter(review => review.slug === slug)
             .map((review, idx) => (
               <div
                 key={idx}
-                className="min-w-[260px] max-w-xs bg-gray-100 border border-gray-200 rounded-xl p-4 shadow-sm"
+                className="md:min-w-[260px] min-w-full max-sm:flex-1 bg-gray-100 border border-gray-200 rounded-xl p-4 shadow-sm"
               >
                 <h3 className="font-bold text-lg text-gray-800">
                   {review.name}

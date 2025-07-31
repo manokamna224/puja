@@ -1,7 +1,8 @@
 import { Inter,Playfair_Display } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/footer";
+import Footer from "@/modules/footer/ui/footer";
 import Navbar from "@/components/navbar";
+import MobileFooter from "@/modules/footer/ui/mobile-footer";
 
 export const InterSans = Inter({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <MobileFooter />
       </body>
     </html>
   );

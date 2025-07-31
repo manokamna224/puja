@@ -240,7 +240,7 @@ export default function PujaDetailsPage() {
    <>
     <div className="min-h-fit px-6 py-10 bg-[#fff9f2] flex flex-col md:flex-row gap-10">
       {/* Left: Image section */}
-      <div className="w-1/2 relative h-[400px] ">
+      <div className="md:w-1/2 w-full max-sm:h-[200px] relative md:h-[400px] ">
         <Image fill src={puja.image} alt={puja.title} className="w-full rounded-xl shadow" />
       </div>
 
