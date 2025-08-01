@@ -24,9 +24,10 @@ export default function Navbar() {
 
       {/* Right Button & Profile */}
       <div className="flex items-center gap-4">
-        <button className="bg-white text-[#b71717] px-4 py-1 rounded-full font-semibold hover:bg-yellow-100">
-          Get Spiritual help
-        </button>
+        <button className="whitespace-nowrap text-sm sm:text-base bg-white text-[#b71717] px-4 py-1 rounded-full font-semibold hover:bg-yellow-100">
+        Get Spiritual help
+      </button>
+
         <FaUserCircle size={24} className="text-white cursor-pointer" />
       </div>
     </nav>
