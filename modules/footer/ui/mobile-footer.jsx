@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react'
 import { MdHome } from "react-icons/md";
 import { FaHandsPraying } from "react-icons/fa6";
 import { PiHandCoinsFill } from "react-icons/pi";
-import { GiByzantinTemple } from "react-icons/gi";
 import { PiBowlFoodBold } from "react-icons/pi";
+import { GiByzantinTemple } from "react-icons/gi";
 import Link from 'next/link';
 import { useParams, usePathname } from 'next/navigation';
 
