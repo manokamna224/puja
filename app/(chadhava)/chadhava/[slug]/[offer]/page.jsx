@@ -3,7 +3,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
 export default function ParticipateForm() {
-  const {packag} = useParams();
+  const {offer} = useParams();
   
 
   const [form, setForm] = useState({
@@ -12,19 +12,19 @@ export default function ParticipateForm() {
     phone: '',
     gotra: '',
     address: '',
-    packageType: '',
+    offereType: '',
   });
 
   const [step, setStep] = useState('form');
 
   useEffect(() => {
-    if (packag) {
+    if (offer) {
       setForm((prev) => ({
         ...prev,
-        packageType: packag,
+        offereType: offer,
       }));
     }
-  }, [packag]);
+  }, [offer]);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -44,7 +44,7 @@ export default function ParticipateForm() {
       phone: '',
       gotra: '',
       address: '',
-      packageType: '',
+      offereType: '',
     });
     router.push('/');
   };
@@ -53,7 +53,7 @@ export default function ParticipateForm() {
     <section className="min-h-screen py-10 px-4 sm:px-6 md:px-10 lg:px-20 bg-gradient-to-br from-yellow-50 to-orange-50">
       <div className="max-w-3xl mx-auto bg-white shadow-2xl rounded-2xl p-6 sm:p-8 md:p-10">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center">
-          {step === 'form' ? 'Puja Participation Form' : 'Secure Payment'}
+          {step === 'form' ? 'Book your slot for chadhava' : 'Secure Payment'}
         </h2>
 
         {step === 'form' ? (
@@ -63,16 +63,6 @@ export default function ParticipateForm() {
             <InputField label="Phone Number" type="tel" name="phone" value={form.phone} onChange={handleChange} required />
             <InputField label="Gotra (Optional)" name="gotra" value={form.gotra} onChange={handleChange} />
             <InputField label="Full Address" name="address" value={form.address} onChange={handleChange} required />
-
-            <div>
-              <label className="block text-sm font-semibold">Selected Package</label>
-              <input
-                type="text"
-                value={form.packageType?.charAt(0).toUpperCase() + form.packageType?.slice(1) || 'N/A'}
-                disabled
-                className="w-full mt-1 px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg text-gray-700"
-              />
-            </div>
 
             <button
               type="submit"
@@ -84,15 +74,10 @@ export default function ParticipateForm() {
         ) : (
           <div className="space-y-6">
             <p className="text-lg sm:text-xl text-gray-700 text-center">
-              You’ve selected the <strong className="capitalize">{form.packageType}</strong> package.
+              You’ve selected the <strong className="capitalize">{form.offereType.replace(/[^a-zA-Z]/g,' ')}</strong> offer.
             </p>
             <div className="bg-orange-100 p-5 rounded-lg text-center shadow-md">
-              <p className="text-xl font-semibold text-orange-800">Total Amount: ₹{
-                form.packageType === 'single' ? 551 :
-                form.packageType === 'couple' ? 1100 :
-                form.packageType === 'family' ? 2100 :
-                form.packageType === 'vip' ? 3100 : 'N/A'
-              }</p>
+              <p className="text-xl font-semibold text-orange-800">Total Amount: ₹{form.offereType.replaceAll("%20").match(/\d+/)}</p>
               <p className="text-sm text-gray-600 mt-2">Secure payment via UPI, Net Banking, or Cards</p>
             </div>
 

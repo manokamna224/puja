@@ -1,7 +1,7 @@
 'use client'
 
 import Link from "next/link"
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 const packages = [
   {
@@ -39,7 +39,8 @@ const packages = [
 ]
 
 export default function PujaPackages() {
-  const {slug} = useRouter();
+  const {slug} = useParams();
+  // console.log(slug, 'kjkjkj');
   return (
     <section className="py-12 px-6 md:px-20 bg-[#fff9f2]">
       <h2 className="text-2xl font-bold text-gray-800 mb-2">Select Puja Package</h2>

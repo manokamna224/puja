@@ -22,6 +22,8 @@ const page = () => {
         events={card.events}
         price={card.price}
         image={card.image}
+        slug={slug}
+        offer={card.title}
         />
       ))}
      </div>

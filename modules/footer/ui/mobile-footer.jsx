@@ -1,25 +1,35 @@
 
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MdHome } from "react-icons/md";
 import { FaHandsPraying } from "react-icons/fa6";
 import { PiHandCoinsFill } from "react-icons/pi";
 import { GiByzantinTemple } from "react-icons/gi";
 import { PiBowlFoodBold } from "react-icons/pi";
 import Link from 'next/link';
+import { useParams, usePathname } from 'next/navigation';
 
 
 const navItems = [
-  { label: 'Home', icon: <MdHome />, path: '/' },
-  { label: 'Puja', icon: <FaHandsPraying />, path: '/puja' },
-  { label: 'Chadhava', icon: <PiHandCoinsFill />, path: '/chadhava' },
-  { label: 'Prasad', icon: <GiByzantinTemple />, path: '/prasad'},
-  { label: 'Temple', icon: <PiBowlFoodBold />, path: '/temple'}
+  { label: 'home', icon: <MdHome />, path: '/' },
+  { label: 'puja', icon: <FaHandsPraying />, path: '/puja' },
+  { label: 'chadhava', icon: <PiHandCoinsFill />, path: '/chadhava' },
+  { label: 'prasad', icon: <GiByzantinTemple />, path: '/prasad'},
+  { label: 'temple', icon: <PiBowlFoodBold />, path: '/temple'}
 ]
 
 export default function MobileBottomNav() {
-  const [active, setActive] = useState('Home')
+  const [active, setActive] = useState('home')
+  const paramsState = usePathname();  
+
+  useEffect(()=>{
+    if(paramsState !== '/'){
+      setActive(paramsState.slice(1))
+    }else {
+      setActive('home')
+    }
+  },[paramsState])
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-white shadow-md rounded-t-3xl md:hidden">

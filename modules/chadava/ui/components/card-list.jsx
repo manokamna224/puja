@@ -1,5 +1,6 @@
+import Link from "next/link";
 
-export default function ChadhavaCardList({title, subtitle, events, description, price}) {
+export default function ChadhavaCardList({title, slug, offer, subtitle, events, description, price}) {
   return (
     <div className="px-4 py-6 max-w-5xl mx-auto space-y-6">
         <div
@@ -32,11 +33,11 @@ export default function ChadhavaCardList({title, subtitle, events, description, 
           </div>
 
           {/* Image + Add Button */}
-          <div className="mt-4 md:mt-0 md:ml-4 flex-shrink-0 text-center">
+          <Link href={`/chadhava/${slug}/${offer+price}`} className="mt-4 md:mt-0 md:ml-4 flex-shrink-0 text-center">
             <button className="mt-2 px-4 py-1 border border-green-500 text-green-600 font-semibold rounded hover:bg-green-50">
               + Add
             </button>
-          </div>
+          </Link>
         </div>
     </div>
   )
