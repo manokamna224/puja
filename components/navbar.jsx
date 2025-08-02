@@ -6,7 +6,7 @@ import { FaGlobeAmericas } from "react-icons/fa";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center bg-[#ed1010] text-white max-sm:px-4 lg:px-20 py-4 shadow-md">
+    <nav className="flex justify-between items-center bg-[#FF5722] text-white max-sm:px-4 lg:px-20 py-4 shadow-md">
       {/* Left Logo */}
       <div className="flex items-center gap-2">
         <FaGlobeAmericas size={24} className="text-white" />
@@ -24,7 +24,7 @@ export default function Navbar() {
 
       {/* Right Button & Profile */}
       <div className="flex items-center gap-4">
-        <button className="whitespace-nowrap md:block hidden text-sm sm:text-base bg-white text-[#b71717] px-4 py-1 rounded-full font-semibold hover:bg-yellow-100">
+        <button className="whitespace-nowrap md:block hidden text-sm sm:text-base bg-white text-[#8B0000] px-4 py-1 rounded-full font-semibold hover:bg-yellow-100">
         Get Spiritual help
       </button>
 

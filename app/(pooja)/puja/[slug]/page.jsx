@@ -268,20 +268,20 @@ export default function PujaDetailsPage() {
 
         <div className="bg-yellow-10 max-sm:max-w-screen w-fit border border-yellow-400 rounded-lg p-4 inline-block">
           <p className="text-xs font-mono text-gray-900 font-semibold mb-4">Puja booking will close in:</p>
-          <div className="flex flex-wrap gap-4 justify-around font-bold text-lg text-orange-600">
-            <div className="text-center max-sm:flex-1 bg-yellow-200 max-sm:py-1.5 max-sm:px-4 py-2 px-6 rounded-lg">
+          <div className="flex gap-2 justify-around font-bold text-lg text-orange-600">
+            <div className="text-center  bg-yellow-200 max-sm:py-1.5 max-sm:px-4 py-2 px-4 rounded-lg">
               <div>{timer.days}</div>
               <span className="text-xs">Day</span>
             </div>
-            <div className="text-center max-sm:flex-1 bg-yellow-200 max-sm:py-1.5 max-sm:px-4 py-2 px-6 rounded-lg">
+            <div className="text-center  bg-yellow-200 max-sm:py-1.5 max-sm:px-4 py-2 px-4 rounded-lg">
               <div>{timer.hours}</div>
               <span className="text-xs">Hours</span>
             </div>
-            <div className="text-center max-sm:flex-1 bg-yellow-200 max-sm:py-1.5 max-sm:px-4 py-2 px-6 rounded-lg">
+            <div className="text-center  bg-yellow-200 max-sm:py-1.5 max-sm:px-4 py-2 px-4 rounded-lg">
               <div>{timer.minutes}</div>
               <span className="text-xs">Mins</span>
             </div>
-            <div className="text-center max-sm:flex-1 bg-yellow-200 max-sm:py-1.5 max-sm:px-4 py-2 px-6 rounded-lg">
+            <div className="text-center  bg-yellow-200 max-sm:py-1.5 max-sm:px-4 py-2 px-4 rounded-lg">
               <div>{timer.seconds}</div>
               <span className="text-xs">Secs</span>
             </div>

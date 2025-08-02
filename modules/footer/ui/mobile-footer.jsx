@@ -15,8 +15,8 @@ const navItems = [
   { label: 'home', icon: <MdHome />, path: '/' },
   { label: 'puja', icon: <FaHandsPraying />, path: '/puja' },
   { label: 'chadhava', icon: <PiHandCoinsFill />, path: '/chadhava' },
-  { label: 'prasad', icon: <GiByzantinTemple />, path: '/prasad'},
-  { label: 'temple', icon: <PiBowlFoodBold />, path: '/temple'}
+  { label: 'prasad', icon: <PiBowlFoodBold />, path: '/prasad'},
+  { label: 'temple', icon: <GiByzantinTemple />, path: '/temple'}
 ]
 
 export default function MobileBottomNav() {
