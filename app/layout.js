@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/modules/footer/ui/footer";
 import Navbar from "@/components/navbar";
 import MobileFooter from "@/modules/footer/ui/mobile-footer";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 export const InterSans = Inter({
   subsets: ["latin"],
@@ -20,10 +21,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${InterSans.className} ${PlayfairDisplay.variable} antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
-        <MobileFooter />
+        <AuthProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <MobileFooter />
+        </AuthProvider>
       </body>
     </html>
   );
